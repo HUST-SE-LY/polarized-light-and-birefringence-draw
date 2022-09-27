@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>偏振与双折射极坐标绘制</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+  <script src="ecStat.min.js"></script>
+</head>
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container div {
+    padding: 20px;
+    border: gray 1px solid;
+  }
+  .data_input {
+    width: 8em;
+  }
+  .button {
+    margin-top: 20px;
+  }
+</style>
+<body>
+<div class="container">
+  <div>
+    <p>cos²θ</p>
+    <p>I(左旋)</p>
+    <p>I(右旋)</p>
+  </div>
+  <div>
+    <p class="cos">0.00</p>
+    <p><input type="text" class="ILeft"></p>
+    <p><input type="text" class="IRight"></p>
+  </div>
+  <div>
+    <p class="cos">0.03</p>
+    <p><input type="text" class="ILeft"></p>
+    <p><input type="text" class="IRight"></p>
+  </div>
+  <div>
+    <p class="cos">0.12</p>
+    <p><input type="text" class="ILeft"></p>
+    <p><input type="text" class="IRight"></p>
+  </div>
+  <div>
+    <p class="cos">0.25</p>
+    <p><input type="text" class="ILeft"></p>
+    <p><input type="text" class="IRight"></p>
+  </div>
+  <div>
+    <p class="cos">0.41</p>
+    <p><input type="text" class="ILeft"></p>
+    <p><input type="text" class="IRight"></p>
+  </div>
+  <div>
+    <p class="cos">0.59</p>
+    <p><input type="text" class="ILeft"></p>
+    <p><input type="text" class="IRight"></p>
+  </div>
+  <div>
+    <p class="cos">0.75</p>
+    <p><input type="text" class="ILeft"></p>
+    <p><input type="text" class="IRight"></p>
+  </div>
+  <div>
+    <p class="cos">0.88</p>
+    <p><input type="text" class="ILeft"></p>
+    <p><input type="text" class="IRight"></p>
+  </div>
+  <div>
+    <p class="cos">0.97</p>
+    <p><input type="text" class="ILeft"></p>
+    <p><input type="text" class="IRight"></p>
+  </div>
+  <div>
+    <p class="cos">1</p>
+    <p><input type="text" class="ILeft"></p>
+    <p><input type="text" class="IRight"></p>
+  </div>
+  <div>
+    <button class="cos-IButton">绘制</button>
+  </div>
+</div>
+<div class="chartI" style="width: 500px;height: 500px"></div>
+<div class="chartR" style="width: 500px;height: 500px"></div>
+<div class="container">
+  <div>
+    <p>0</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>10</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>20</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>30</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>40</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>50</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>60</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>70</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>80</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>90</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>100</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>110</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>120</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>130</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>140</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>150</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>160</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>170</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>180</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>190</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>200</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>210</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>220</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>230</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>240</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>250</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>260</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>270</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>280</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>290</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>300</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>310</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>320</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>330</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>340</p>
+    <input class="data_input">
+  </div>
+  <div>
+    <p>350</p>
+    <input class="data_input">
+  </div>
+</div>
+<button class="button">绘制</button>
+<div class="chart" style="width: 500px;height: 500px"></div>
+<div class="chart2" style="width: 500px;height: 500px"></div>
+<script src="main.js"></script>
+</body>
+</html>
